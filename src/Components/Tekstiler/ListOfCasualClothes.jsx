@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export const ListOfCasualClothes = () => {
   const [casclothes, setCasClothes] = useState([]);
+  const [searchTerm, SetSearchTerm] = useState("");
 
   useEffect(() => {
     function getFilters() {
@@ -54,37 +55,71 @@ export const ListOfCasualClothes = () => {
   return (
     <>
       <div className="heading">
-        <h1>List og clothes</h1>
+        <b></b>
+        <h2>Filter</h2>
+      </div>
+
+      <div className="searchbox">
+        <input
+          type="text"
+          placeholder="Søg efter brand"
+          onChange={(event) => {
+            SetSearchTerm(event.target.value);
+          }}
+        />
+      </div>
+
+      <div className="fiteroptions">
+        <select className="value" name="" id="">
+          <option value="Default">Sorter efter Pris</option>
+          <option value="LowToHigh">Lav til Høj</option>
+          <option value="HighToLow">Høj til Lav</option>
+        </select>
+
+        <select className="value" name="" id="">
+          <option value="Default">Sorter efter stand</option>
+          <option value="Ny">Ny</option>
+          <option value="Næsten Ny">Næsten Ny</option>
+          <option value="Gammel">Gammel</option>
+        </select>
       </div>
       <section className="grid-container">
-        {casclothes.map((cloth) => (
-          <article key={cloth.id}>
-            <div className="desktop">
-              <Link
-                className="link"
-                to={{
-                  pathname: `/detailpage/${cloth.id}`,
-                }}
-              >
-                <div className="images">
-                  <img className="mobile" src={cloth.img1} alt={cloth.category} />
-                </div>
-              </Link>
-              <div className="extrainfo">
-                <div>
-                  <span>Størrelse:&nbsp;{cloth.Size}</span>
-                  <br></br>
-                  <span className="brand">Brand:&nbsp;{cloth.brand}</span> <br></br>
-                  <span className="brand">Farve:&nbsp;{cloth.color}</span> <br></br>
-                  <b>DKK:&nbsp;{cloth.Price}</b>
-                </div>
-                <div className="tilbtn">
-                  <button>Tilføj i kurv</button>
+        {casclothes
+          .filter((cloth) => {
+            if (searchTerm === "") {
+              return cloth;
+            } else if (cloth.brand.toLowerCase().includes(searchTerm.toLowerCase())) {
+              return cloth;
+            }
+          })
+          .map((cloth) => (
+            <article key={cloth.id}>
+              <div className="desktop">
+                <Link
+                  className="link"
+                  to={{
+                    pathname: `/detailpage/${cloth.id}`,
+                  }}
+                >
+                  <div className="images">
+                    <img className="mobile" src={cloth.img1} alt={cloth.category} />
+                  </div>
+                </Link>
+                <div className="extrainfo">
+                  <div>
+                    <span>Størrelse:&nbsp;{cloth.Size}</span>
+                    <br></br>
+                    <span className="brand">Brand:&nbsp;{cloth.brand}</span> <br></br>
+                    <span className="brand">Farve:&nbsp;{cloth.color}</span> <br></br>
+                    <b>DKK:&nbsp;{cloth.Price}</b>
+                  </div>
+                  <div className="tilbtn">
+                    <button>Tilføj i kurv</button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
       </section>
     </>
   );

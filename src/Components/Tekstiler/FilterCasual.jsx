@@ -42,7 +42,7 @@ export const FilterCasual = () => {
   return (
     <>
       <div className="heading">
-        <h3>Casual Tøj</h3>
+        <h2>Casual Tøj</h2>
         <div className="p">
           <p>Hvad leder du efter?</p>
         </div>
@@ -146,8 +146,9 @@ export const FilterCasual = () => {
               </div>
             </label>
           </div>
+          <button className="findvalgte">Find valgte</button>
         </div>
-        <button>Find valgte</button>
+
         <p>{errormessage}</p>
       </form>
     </>

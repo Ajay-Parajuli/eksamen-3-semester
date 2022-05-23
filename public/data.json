@@ -12,7 +12,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/02/11409-1-300x400.jpg.webp",
     "img1": "./filterimage/carhatt.png",
     "img2": "./filterimage/carhart1png.png",
-    "img3": "./filterimage/carhart2.png"
+    "img3": "./filterimage/carhart2.png",
+    "stand": "Ny"
   },
 
   {
@@ -28,7 +29,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/02/11400-1-600x800.jpg.webp",
     "img1": "./filterimage/calvin.png",
     "img2": "./filterimage/calvin1.png",
-    "img3": "./filterimage/calvin.png"
+    "img3": "./filterimage/calvin.png",
+    "stand": "Næsten som ny"
   },
 
   {
@@ -44,7 +46,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/01/IMG_20220121_115529-600x800.jpg.webp",
     "img1": "./filterimage/sandjeans.png",
     "img2": "./filterimage/sandjeans1.png",
-    "img3": "./filterimage/sandjeans.png"
+    "img3": "./filterimage/sandjeans.png",
+    "stand": "Gammel"
   },
 
   {
@@ -60,7 +63,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/02/11146-1-600x800.jpg",
     "img1": "./filterimage/catsweat1.png",
     "img2": "./filterimage/catsweat.png",
-    "img3": "./filterimage/catsweat2.png"
+    "img3": "./filterimage/catsweat2.png",
+    "stand": "Næsten som ny"
   },
 
   {
@@ -76,7 +80,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2021/11/IMG_20211127_162319-600x800.jpg.webp",
     "img1": "./filterimage/h20.png",
     "img2": "./filterimage/h20.png",
-    "img3": "./filterimage/h20.png"
+    "img3": "./filterimage/h20.png",
+    "stand": "Ny"
   },
 
   {
@@ -92,7 +97,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/01/IMG_20220120_140300-600x800.jpg.webp",
     "img1": "./filterimage/pink.png",
     "img2": "./filterimage/pink.png",
-    "img3": "./filterimage/pink.png"
+    "img3": "./filterimage/pink.png",
+    "stand": "Gammel"
   },
 
   {
@@ -108,7 +114,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/02/11138-600x800.jpg.webp",
     "img1": "./filterimage/zaratsh.png",
     "img2": "./filterimage/zaratsh.png",
-    "img3": "./filterimage/zaratsh.png"
+    "img3": "./filterimage/zaratsh.png",
+    "stand": "Ny"
   },
 
   {
@@ -124,7 +131,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/01/IMG_20220120_153950-600x800.jpg.webp",
     "img1": "./filterimage/gruunt.png",
     "img2": "./filterimage/gruunt.png",
-    "img3": "./filterimage/gruunt.png"
+    "img3": "./filterimage/gruunt.png",
+    "stand": "Næsten som ny"
   },
 
   {
@@ -140,7 +148,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2021/09/IMG_20210912_130822-600x800.jpg.webp",
     "img1": "./filterimage/henri.png",
     "img2": "./filterimage/henri.png",
-    "img3": "./filterimage/henri.png"
+    "img3": "./filterimage/henri.png",
+    "stand": "Gammel"
   },
 
   {
@@ -156,7 +165,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/02/11634-1-600x800.jpg.webp",
     "img1": "./filterimage/kron.png",
     "img2": "./filterimage/kron.png",
-    "img3": "./filterimage/kron.png"
+    "img3": "./filterimage/kron.png",
+    "stand": "Næsten som ny"
   },
 
   {
@@ -172,7 +182,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/02/11631-1-600x800.jpg.webp",
     "img1": "./filterimage/mainfield.png",
     "img2": "./filterimage/mainfield.png",
-    "img3": "./filterimage/mainfield.png"
+    "img3": "./filterimage/mainfield.png",
+    "stand": "Ny"
   },
 
   {
@@ -188,7 +199,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/02/11397-600x800.jpg.webp",
     "img1": "./filterimage/sandfields.png",
     "img2": "./filterimage/sandfields.png",
-    "img3": "./filterimage/sandfields.png"
+    "img3": "./filterimage/sandfields.png",
+    "stand": "Gammel"
   },
 
   {
@@ -204,7 +216,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/02/11045-600x800.jpg",
     "img1": "./filterimage/samso.png",
     "img2": "./filterimage/samso.png",
-    "img3": "./filterimage/samso.png"
+    "img3": "./filterimage/samso.png",
+    "stand": "Næsten som ny"
   },
 
   {
@@ -220,7 +233,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/02/11415-600x800.jpg",
     "img1": "./filterimage/logg.png",
     "img2": "./filterimage/logg.png",
-    "img3": "./filterimage/logg.png"
+    "img3": "./filterimage/logg.png",
+    "stand": "Ny"
   },
 
   {
@@ -236,7 +250,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2021/11/IMG_20211127_160023-600x800.jpg",
     "img1": "./filterimage/telemark.png",
     "img2": "./filterimage/telemark.png",
-    "img3": "./filterimage/telemark.png"
+    "img3": "./filterimage/telemark.png",
+    "stand": "Gammel"
   },
 
   {
@@ -252,7 +267,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/03/11816-600x800.jpg.webp",
     "img1": "./filterimage/sko.png",
     "img2": "./filterimage/sko1.png",
-    "img3": "./filterimage/sko.png"
+    "img3": "./filterimage/sko.png",
+    "stand": "Ny"
   },
 
   {
@@ -268,7 +284,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/03/11811-2-600x800.jpg.webp",
     "img1": "./filterimage/ecco.png",
     "img2": "./filterimage/ecco.png",
-    "img3": "./filterimage/ecco.png"
+    "img3": "./filterimage/ecco.png",
+    "stand": "Næsten som ny"
   },
 
   {
@@ -284,7 +301,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2021/08/DSC_9811.jpg",
     "img1": "./filterimage/bazaar.png",
     "img2": "./filterimage/bazaar.png",
-    "img3": "./filterimage/bazaar.png"
+    "img3": "./filterimage/bazaar.png",
+    "stand": "Gammel"
   },
 
   {
@@ -300,7 +318,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2021/06/DSC_9310-600x900.jpg.webp",
     "img1": "./filterimage/studios.png",
     "img2": "./filterimage/studios.png",
-    "img3": "./filterimage/studios.png"
+    "img3": "./filterimage/studios.png",
+    "stand": "Næsten som ny"
   },
 
   {
@@ -316,7 +335,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2021/08/DSC_9683-600x631.jpg.webp",
     "img1": "./filterimage/pinkshort.png",
     "img2": "./filterimage/pinkshort.png",
-    "img3": "./filterimage/pinkshort.png"
+    "img3": "./filterimage/pinkshort.png",
+    "stand": "Ny"
   },
 
   {
@@ -332,7 +352,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/02/11036-1-600x800.jpg.webp",
     "img1": "./filterimage/sortjakke.png",
     "img2": "./filterimage/sortjakke.png",
-    "img3": "./filterimage/sortjakke.png"
+    "img3": "./filterimage/sortjakke.png",
+    "stand": "Næsten som ny"
   },
 
   {
@@ -348,7 +369,8 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/01/IMG_20220121_132935-600x800.jpg.webp",
     "img1": "./filterimage/greyjakke.png",
     "img2": "./filterimage/greyjakke.png",
-    "img3": "./filterimage/greyjakke.png"
+    "img3": "./filterimage/greyjakke.png",
+    "stand": "Ny"
   },
 
   {
@@ -364,6 +386,7 @@
     "img": "https://mildt.dk/wp-content/uploads/2022/01/IMG_20220120_141331-600x800.jpg.webp",
     "img1": "./filterimage/cojakke.png",
     "img2": "./filterimage/cojakke.png",
-    "img3": "./filterimage/cojakke.png"
+    "img3": "./filterimage/cojakke.png",
+    "stand": "Gammmel"
   }
 ]

@@ -43,7 +43,9 @@ export const Nav = () => {
 
       <div className="middel">
         <span>
-          <AiOutlineShoppingCart className="icon" />
+          <Link to="/cart" className="navlink">
+            <AiOutlineShoppingCart className="icon" />
+          </Link>
         </span>
       </div>
     </div>

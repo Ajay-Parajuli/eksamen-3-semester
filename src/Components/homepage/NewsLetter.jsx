@@ -19,9 +19,8 @@ export const NewsLetter = () => {
         </div>
         <div className="newsletterregister">
           <form>
-            <label for="npt-text"></label>
             <input type="text" value="" placeholder="Navn" />
-            <label for="npt-email"></label>
+
             <input type="email" value="" placeholder="Email" />
 
             <button className="button" type="submit">

@@ -1,36 +1,24 @@
 import { useEffect, useState } from "react";
 
 export const PostForm = ({ savePost, post }) => {
-  const [city, setCitys] = useState("");
+  const [brand, setBrand] = useState("");
   const [image, setImage] = useState("");
-  const [budget, setBudget] = useState("");
-  const [housing, setHousing] = useState("");
-  const [position, setPosition] = useState("");
-  const [pets, setPets] = useState("");
-  const [personality, setPersonality] = useState("");
-  const [smoking, setSmoking] = useState("");
-  const [eatingHabits, setEatingHabits] = useState("");
-  const [partyHabits, setPartyHabits] = useState("");
-  const [bio, setBio] = useState("");
-  const [interests, setInterests] = useState("");
-  const [language, setLanguage] = useState("");
+  const [price, setPrice] = useState("");
+  const [size, setSize] = useState("");
+  const [materiale, setMateriale] = useState("");
+  const [stand, setStand] = useState("");
+  const [stock, setStock] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     if (post) {
-      setCitys(post.city);
+      setBrand(post.brand);
       setImage(post.image);
-      setBudget(post.budget);
-      setHousing(post.housing);
-      setPosition(post.position);
-      setPets(post.pets);
-      setPersonality(post.personality);
-      setLanguage(post.language);
-      setSmoking(post.smoking);
-      setEatingHabits(post.eatingHabits);
-      setPartyHabits(post.partyHabits);
-      setBio(post.bio);
-      setInterests(post.interests);
+      setPrice(post.Price);
+      setSize(post.size);
+      setMateriale(post.materiale);
+      setStand(post.stand);
+      setStock(post.stock);
     }
   }, [post]);
 
@@ -52,34 +40,15 @@ export const PostForm = ({ savePost, post }) => {
     event.preventDefault();
     const formData = {
       image: image,
-      city: city,
-      budget: budget,
-      housing: housing,
-      position: position,
-      pets: pets,
-      personality: personality,
-      language: language,
-      smoking: smoking,
-      eatingHabits: eatingHabits,
-      partyHabits: partyHabits,
-      bio: bio,
-      interests: interests,
+      brand: brand,
+      price: price,
+      size: size,
+      materiale: materiale,
+      stock: stock,
+      stand: stand,
     };
 
-    const validForm =
-      formData.city &&
-      formData.image &&
-      formData.budget &&
-      formData.housing &&
-      formData.position &&
-      formData.pets &&
-      formData.personality &&
-      formData.language &&
-      formData.smoking &&
-      formData.eatingHabits &&
-      formData.partyHabits &&
-      formData.bio &&
-      formData.interests;
+    const validForm = formData.brand && formData.image && formData.price && formData.stock && formData.stand && formData.size && formData.materiale;
 
     if (validForm) {
       savePost(formData);
@@ -90,27 +59,39 @@ export const PostForm = ({ savePost, post }) => {
 
   return (
     <form className="post-form" onSubmit={handleSubmit}>
-      <p className="img-instruction">Vælg dit profil billede</p>
+      <p className="img-instruction">Vælg et billede</p>
       <label>
         <input type="file" className="file-input" accept="image/*" onChange={handleImageChange} />
       </label>
 
-      <b>Informationer</b>
-      <p>Generelt om dig</p>
-
       <label>
-        Hvad er dit månedlige budget?
-        <input type="number" value={budget} placeholder="Beløb" onChange={(e) => setBudget(e.target.value)} />
+        Prisen?
+        <input type="number" value={price} placeholder="Beløb" onChange={(e) => setPrice(e.target.value)} />
       </label>
 
       <label>
-        Hvor søger du bolig?
-        <input type="text" value={city} placeholder="eks. Aarhus C, Aarhus N.." onChange={(e) => setCitys(e.target.value)} />
+        Brand
+        <input type="text" value={brand} onChange={(e) => setBrand(e.target.value)} />
       </label>
 
       <label>
-        Hvad er din stilling?
-        <input type="text" value={position} placeholder="Job eller Uddanelse" onChange={(e) => setPosition(e.target.value)} />
+        Size?
+        <input type="text" value={size} onChange={(e) => setSize(e.target.value)} />
+      </label>
+
+      <label>
+        Stand
+        <input type="text" value={stand} onChange={(e) => setStand(e.target.value)} />
+      </label>
+
+      <label>
+        Materiale?
+        <input type="text" value={materiale} onChange={(e) => setMateriale(e.target.value)} />
+      </label>
+
+      <label>
+        Stock?
+        <input type="text" value={stock} onChange={(e) => setStock(e.target.value)} />
       </label>
       <p className="text-error">{errorMessage}</p>
       <button type="submit">Save</button>

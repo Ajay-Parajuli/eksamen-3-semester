@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 export const DetailCasualClothes = () => {
   const params = useParams();
@@ -7,21 +7,19 @@ export const DetailCasualClothes = () => {
   const [profile, setProfile] = useState({});
 
   useEffect(() => {
-    async function getDataa() {
-      const ress = await fetch("data.json");
-      const dataa = await ress.json();
-      console.log("dataa");
-      const cloth = dataa.find((cloth) => cloth.id === params.id);
-      setProfile(cloth);
+    async function getData() {
+      const res = await fetch("data.json");
+      const data = await res.json();
+      console.log(data);
+      const user = data.find((cloth) => cloth.id === params.id);
+      setProfile(user);
     }
-
-    getDataa();
+    getData();
   }, []);
 
   return (
-    <div>
-      <pre></pre>
-      {profile.Price}
-    </div>
+    <>
+      <div className="profiledetails">{profile.Price}</div>
+    </>
   );
 };

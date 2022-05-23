@@ -7,6 +7,9 @@ export const ListOfCasualClothes = () => {
   const [casclothes, setCasClothes] = useState([]);
   const [searchTerm, SetSearchTerm] = useState("");
 
+  const Ny = "Ny";
+  const Gammel = "Gammel";
+
   useEffect(() => {
     function getFilters() {
       const filters = [];
@@ -52,6 +55,12 @@ export const ListOfCasualClothes = () => {
     getCasClothes();
   }, []);
 
+  const [category, setCategory] = useState(Ny);
+
+  const getProductsInCategory = () => {
+    return casclothes.filter((product) => product.stand === category);
+  };
+
   return (
     <>
       <div className="heading">
@@ -70,21 +79,20 @@ export const ListOfCasualClothes = () => {
       </div>
 
       <div className="fiteroptions">
-        <select className="value" name="" id="">
-          <option value="Default">Sorter efter Pris</option>
-          <option value="LowToHigh">Lav til Høj</option>
-          <option value="HighToLow">Høj til Lav</option>
+        <select onChange={(e) => setCategory(e.target.value)} className="value">
+          <option value={Ny}>{Ny}</option>
+          <option value={Gammel}>{Gammel}</option>
         </select>
 
         <select className="value" name="" id="">
-          <option value="Default">Sorter efter stand</option>
+          <option value="">Sorter efter stand</option>
           <option value="Ny">Ny</option>
           <option value="Næsten Ny">Næsten Ny</option>
           <option value="Gammel">Gammel</option>
         </select>
       </div>
       <section className="grid-container">
-        {casclothes
+        {getProductsInCategory()
           .filter((cloth) => {
             if (searchTerm === "") {
               return cloth;
@@ -111,6 +119,7 @@ export const ListOfCasualClothes = () => {
                     <br></br>
                     <span className="brand">Brand:&nbsp;{cloth.brand}</span> <br></br>
                     <span className="brand">Farve:&nbsp;{cloth.color}</span> <br></br>
+                    <span className="brand">Stand:&nbsp;{cloth.stand}</span> <br></br>
                     <b>DKK:&nbsp;{cloth.Price}</b>
                   </div>
                   <div className="tilbtn">

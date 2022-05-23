@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 
-export const SignUpPage = () => {
+export const SignUp = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const auth = getAuth();

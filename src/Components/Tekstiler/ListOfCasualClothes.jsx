@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./tekstiler.css";
 import { Link } from "react-router-dom";
+import { productsRef } from "../../firebase-config";
+import { getDocs } from "firebase/firestore";
 
 export const ListOfCasualClothes = () => {
   const [casclothes, setCasClothes] = useState([]);
@@ -42,13 +44,17 @@ export const ListOfCasualClothes = () => {
     }
 
     async function getCasClothes() {
-      const response = await fetch("data.json");
-      const list = await response.json();
-      console.log(list);
+      const data = await getDocs(productsRef);
 
+      const products = data.docs.map((doc) => {
+        // map through all docs (object) from post collection
+        return { ...doc.data(), id: doc.id }; // changing the data structure so it's all gathered in one object
+      });
+
+      console.log(products);
       const filters = getFilters();
       console.log(filters);
-      const results = list.filter((item) => filters.includes(item.subcategory));
+      const results = products.filter((item) => filters.includes(item.subcategory));
       console.log(results);
       setCasClothes(results);
     }

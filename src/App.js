@@ -59,28 +59,9 @@ function App() {
     }
   }, [auth.currentUser]);
 
-  function handleClick() {
-    navigate(`/`);
-  }
-
   return (
     <main>
-      <div
-        style={{
-          padding: "1em 1em 0",
-        }}
-      >
-        <h3
-          onClick={handleClick}
-          style={{
-            fontSize: "20px",
-            fontWeight: "bold",
-            color: "#007aff",
-            cursor: "pointer",
-          }}
-        ></h3>
-      </div>
-
+      <Banner />
       <Nav />
       <Routes>
         <Route path="/homepage" element={<Homepage />}></Route>

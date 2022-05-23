@@ -26,8 +26,13 @@ export const Nav = () => {
             </Link>
           </span>
           <span>
-            <Link className="log" to="/login">
+            <Link onClick={() => setShowLinks(!showLinks)} className="log" to="/login">
               Login
+            </Link>
+          </span>
+          <span>
+            <Link onClick={() => setShowLinks(!showLinks)} className="log" to="/create">
+              Create
             </Link>
           </span>
         </div>

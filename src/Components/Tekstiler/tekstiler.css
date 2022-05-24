@@ -116,6 +116,7 @@ body {
 .images {
   background-color: #f6f6f6;
   text-align: center;
+  object-fit: cover;
 }
 
 .tilbtn {

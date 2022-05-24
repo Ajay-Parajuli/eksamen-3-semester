@@ -2,9 +2,21 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { getAuth } from "firebase/auth";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export const Nav = () => {
   const [showLinks, setShowLinks] = useState(false);
+  const auth = getAuth();
+  const navigate = useNavigate();
+
+  const signOutUser = () => {
+    signOut(auth).then(() => {
+      localStorage.clear();
+      navigate("/login");
+    });
+  };
 
   return (
     <div className="navbox">
@@ -26,12 +38,16 @@ export const Nav = () => {
             </Link>
           </span>
           <span>
-            <Link onClick={() => setShowLinks(!showLinks)} className="log" to="/login">
-              Login
-            </Link>
+            {!auth.currentUser ? (
+              <Link onClick={() => setShowLinks(!showLinks)} className="navlink" to="/login">
+                Login
+              </Link>
+            ) : (
+              <button onClick={signOutUser}>Log out</button>
+            )}
           </span>
           <span>
-            <Link onClick={() => setShowLinks(!showLinks)} className="log" to="/create">
+            <Link onClick={() => setShowLinks(!showLinks)} className="navlink" to="/create">
               Create
             </Link>
           </span>

@@ -21,7 +21,7 @@ import { useNavigate } from "react-router-dom";
 function App() {
   const [showLoader, setShowLoader] = useState(true);
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
-  const [isValid, setIsValid] = useState(false);
+
   const navigate = useNavigate();
 
   const auth = getAuth();
@@ -32,31 +32,11 @@ function App() {
       if (user) {
         setIsAuth(true);
         localStorage.setItem("isAuth", true);
-        userIsValid(user);
       } else {
-        setIsValid(false);
         setIsAuth(false);
         localStorage.removeItem("isAuth");
-      }
+      }   
     });
-
-    async function userIsValid(user) {
-      console.log(user);
-      const docRef = doc(usersRef, user.uid);
-      const docSnap = await getDoc(docRef);
-      setIsValid(false);
-
-      if (docSnap.data()) {
-        const userData = docSnap.data();
-
-        console.log(userData);
-
-        if (userData.name && userData.birthday) {
-          setIsValid(true);
-        }
-        console.log(isValid);
-      }
-    }
   }, [auth.currentUser]);
 
   return (
@@ -74,13 +54,14 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="*" element={<Navigate to="/homepage" />}></Route>
 
-        {isValid && (
+        {isAuth && (
           <>
             <Route path="/" element={<ListOfCasualClothes showLoader={setShowLoader} />} />
             <Route path="/create" element={<Create showLoader={setShowLoader} />} />
           </>
         )}
       </Routes>
+
       {showLoader}
     </main>
   );

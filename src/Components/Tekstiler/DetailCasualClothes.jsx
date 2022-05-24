@@ -28,7 +28,12 @@ export const DetailCasualClothes = () => {
     <>
       <div className="profiledetails">
         <div>
-          <img className="mobile" src={profile.img} alt={profile.category} />
+          <div>
+            <img className="mobile" src={profile.img} alt={profile.category} />
+            <img className="mobile" src={profile.img1} alt={profile.category} />
+            <img className="mobile" src={profile.img2} alt={profile.category} />
+            <img className="mobile" src={profile.img3} alt={profile.category} />
+          </div>
 
           <b>{profile.Price}</b>
           <b>{profile.Materiale}</b>

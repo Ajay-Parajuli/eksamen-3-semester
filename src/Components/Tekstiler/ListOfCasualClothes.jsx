@@ -61,10 +61,12 @@ export const ListOfCasualClothes = () => {
     getCasClothes();
   }, []);
 
-  const [category, setCategory] = useState(Ny);
+  const [category, setCategory] = useState("");
 
   const getProductsInCategory = () => {
-    return casclothes.filter((product) => product.stand === category);
+    if (category === "") {
+      return casclothes;
+    } else return casclothes.filter((product) => product.stand === category);
   };
 
   return (
@@ -86,12 +88,13 @@ export const ListOfCasualClothes = () => {
 
       <div className="fiteroptions">
         <select onChange={(e) => setCategory(e.target.value)} className="value">
+          <option value="">Alle</option>
           <option value={Ny}>{Ny}</option>
           <option value={Gammel}>{Gammel}</option>
         </select>
 
         <select className="value" name="" id="">
-          <option value="">Sorter efter stand</option>
+          <option value="Default">Alle</option>
           <option value="Ny">Ny</option>
           <option value="Næsten Ny">Næsten Ny</option>
           <option value="Gammel">Gammel</option>
@@ -124,7 +127,6 @@ export const ListOfCasualClothes = () => {
                     <span>Størrelse:&nbsp;{cloth.Size}</span>
                     <br></br>
                     <span className="brand">Brand:&nbsp;{cloth.brand}</span> <br></br>
-                    <span className="brand">Farve:&nbsp;{cloth.color}</span> <br></br>
                     <span className="brand">Stand:&nbsp;{cloth.stand}</span> <br></br>
                     <b>DKK:&nbsp;{cloth.Price}</b>
                   </div>

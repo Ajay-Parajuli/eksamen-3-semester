@@ -2,7 +2,7 @@ import React from "react";
 import { getAuth } from "firebase/auth";
 import { addDoc, serverTimestamp } from "@firebase/firestore";
 import { useEffect } from "react";
-import { postsRef } from "../firebase-config";
+import { productsRef } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 import { PostForm } from "../Components/create/PostForm";
 
@@ -18,7 +18,7 @@ export const Create = ({ showLoader }) => {
     showLoader(true);
     newPost.createdAt = serverTimestamp();
     newPost.uid = auth.currentUser.uid;
-    await addDoc(postsRef, newPost);
+    await addDoc(productsRef, newPost);
 
     showLoader(false);
     navigate("/");

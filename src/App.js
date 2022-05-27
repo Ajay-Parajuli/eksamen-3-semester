@@ -11,18 +11,17 @@ import { Create } from "./pages/Create";
 import { CartPage } from "./pages/CartPage";
 import DetailPage from "./pages/DetailPage";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc } from "@firebase/firestore";
-import { usersRef } from "./firebase-config";
+
 import { SignUpPage } from "./pages/SignUpPage";
 import React, { useState } from "react";
 import { ListOfCasualClothes } from "./Components/Tekstiler/ListOfCasualClothes";
-import { useNavigate } from "react-router-dom";
+
+import { UpdatePage } from "./pages/UpdatePage";
+import { FindOsPage } from "./pages/FindOsPage";
 
 function App() {
   const [showLoader, setShowLoader] = useState(true);
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
-
-  const navigate = useNavigate();
 
   const auth = getAuth();
 
@@ -35,7 +34,7 @@ function App() {
       } else {
         setIsAuth(false);
         localStorage.removeItem("isAuth");
-      }   
+      }
     });
   }, [auth.currentUser]);
 
@@ -45,19 +44,22 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/homepage" element={<Homepage />}></Route>
-        <Route path="/about" element={<AboutPage />}></Route>
+        <Route path="/omos" element={<AboutPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/clothing" element={<Clothing />}></Route>
         <Route path="/cart" element={<CartPage />}></Route>
         <Route path="/detailpage/:id" element={<DetailPage />}></Route>
         <Route path="/listofcasclothes" element={<FilteredCasual />} />
+        <Route path="/findos" element={<FindOsPage />} />
         <Route path="/signup" element={<SignUpPage />} />
+
         <Route path="*" element={<Navigate to="/homepage" />}></Route>
 
         {isAuth && (
           <>
             <Route path="/" element={<ListOfCasualClothes showLoader={setShowLoader} />} />
             <Route path="/create" element={<Create showLoader={setShowLoader} />} />
+            <Route path="/update" element={<UpdatePage showLoader={setShowLoader} />} />
           </>
         )}
       </Routes>

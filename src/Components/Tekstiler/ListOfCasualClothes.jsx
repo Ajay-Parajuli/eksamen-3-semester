@@ -4,6 +4,8 @@ import "./tekstiler.css";
 import { Link } from "react-router-dom";
 import { productsRef } from "../../firebase-config";
 import { getDocs } from "firebase/firestore";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export const ListOfCasualClothes = () => {
   const [casclothes, setCasClothes] = useState([]);
@@ -69,13 +71,23 @@ export const ListOfCasualClothes = () => {
     } else return casclothes.filter((product) => product.stand === category);
   };
 
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <>
+      <Link
+        className="linkss"
+        to={{
+          pathname: `/clothing`,
+        }}
+      >
+        <p className="backr">- Tilbage</p>
+      </Link>
       <div className="heading">
-        <b></b>
-        <h2>Filter</h2>
+        <h2>Filtrere</h2>
       </div>
-
       <div className="searchbox">
         <input
           type="text"
@@ -87,19 +99,30 @@ export const ListOfCasualClothes = () => {
       </div>
 
       <div className="fiteroptions">
-        <select onChange={(e) => setCategory(e.target.value)} className="value">
-          <option value="">Alle</option>
-          <option value={Ny}>{Ny}</option>
-          <option value={Gammel}>{Gammel}</option>
-        </select>
+        <div className="option">
+          <div>
+            <b className="sortstand">Sorter efter tøjstand:</b>
 
-        <select className="value" name="" id="">
-          <option value="Default">Alle</option>
-          <option value="Ny">Ny</option>
-          <option value="Næsten Ny">Næsten Ny</option>
-          <option value="Gammel">Gammel</option>
-        </select>
+            <select onChange={(e) => setCategory(e.target.value)} className="value">
+              <option value="">Alle</option>
+              <option value={Ny}>{Ny}</option>
+              <option value={Gammel}>{Gammel}</option>
+            </select>
+          </div>
+
+          <div>
+            <b className="sortpris">Sorter efter pris:</b>
+
+            <select className="value" name="" id="">
+              <option value="Default">Random</option>
+
+              <option value="Høj Til Lav">Høj til Lav</option>
+              <option value="Lav til Høj">Lav til Høj</option>
+            </select>
+          </div>
+        </div>
       </div>
+
       <section className="grid-container">
         {getProductsInCategory()
           .filter((cloth) => {
@@ -111,7 +134,7 @@ export const ListOfCasualClothes = () => {
           })
           .map((cloth) => (
             <article key={cloth.id}>
-              <div className="desktop">
+              <div data-aos="fade-up" className="desktop">
                 <Link
                   className="link"
                   to={{
@@ -124,6 +147,7 @@ export const ListOfCasualClothes = () => {
                 </Link>
                 <div className="extrainfo">
                   <div>
+                    <b className="gory">{cloth.subcategory}</b> <br></br>
                     <span>Størrelse:&nbsp;{cloth.Size}</span>
                     <br></br>
                     <span className="brand">Brand:&nbsp;{cloth.brand}</span> <br></br>

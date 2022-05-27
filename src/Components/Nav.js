@@ -24,19 +24,33 @@ export const Nav = () => {
         <div className="links" id={showLinks ? "hidden" : ""}>
           <span>
             <Link onClick={() => setShowLinks(!showLinks)} to="/clothing" className="navlink">
-              Tekstiler
+              Se hele Cataloget
+            </Link>
+          </span>
+
+          <span>
+            <Link onClick={() => setShowLinks(!showLinks)} to="/omos" className="navlink">
+              Om os
             </Link>
           </span>
           <span>
             <Link onClick={() => setShowLinks(!showLinks)} to="/accesories" className="navlink">
-              Tilbehør
+              Find os
             </Link>
           </span>
+
           <span>
             <Link onClick={() => setShowLinks(!showLinks)} to="/about" className="navlink">
-              Om os
+              Blog
             </Link>
           </span>
+
+          <span>
+            <Link onClick={() => setShowLinks(!showLinks)} className="navlink" to="/create">
+              Create
+            </Link>
+          </span>
+
           <span>
             {!auth.currentUser ? (
               <Link onClick={() => setShowLinks(!showLinks)} className="navlink" to="/login">
@@ -45,11 +59,6 @@ export const Nav = () => {
             ) : (
               <button onClick={signOutUser}>Log out</button>
             )}
-          </span>
-          <span>
-            <Link onClick={() => setShowLinks(!showLinks)} className="navlink" to="/create">
-              Create
-            </Link>
           </span>
         </div>
         <button onClick={() => setShowLinks(!showLinks)}>

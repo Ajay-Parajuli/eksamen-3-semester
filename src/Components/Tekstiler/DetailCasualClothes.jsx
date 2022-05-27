@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { productsRef } from "../../firebase-config";
 import { getDocs } from "firebase/firestore";
+import "./tekstiler.css";
+import { Link } from "react-router-dom";
 
 export const DetailCasualClothes = () => {
   const params = useParams();
@@ -26,21 +28,37 @@ export const DetailCasualClothes = () => {
 
   return (
     <>
+      <Link
+        className="linkss"
+        to={{
+          pathname: `/listofcasclothes`,
+        }}
+      >
+        <p className="backr">- Tilbage</p>
+      </Link>
       <div className="profiledetails">
-        <div>
-          <div>
-            <img className="mobile" src={profile.img} alt={profile.category} />
-            <img className="mobile" src={profile.img1} alt={profile.category} />
-            <img className="mobile" src={profile.img2} alt={profile.category} />
-            <img className="mobile" src={profile.img3} alt={profile.category} />
+        <div className="detailbox">
+          <div className="pictures">
+            <div className="imgbox">
+              <img className="mobile" src={profile.img1} alt={profile.category} />
+            </div>
           </div>
+          <h2>{profile.brand}</h2>
+          <p>Materiale:&nbsp;{profile.Materiale}</p>
+          <p>Størrelse:&nbsp;{profile.Size}</p>
+          <p>Farve:&nbsp; {profile.color}</p>
+          <p>Antal stk. på lager:&nbsp; {profile.stock}</p>
 
-          <b>{profile.Price}</b>
-          <b>{profile.Materiale}</b>
-          <p>{profile.Size}</p>
-          <p>{profile.brand}</p>
-          <p>{profile.color}</p>
-          <p>{profile.Stock}</p>
+          <p>Stand:&nbsp; {profile.stand}</p>
+          <br></br>
+          <p>Leveringstid:&nbsp; 1-3 dage</p>
+
+          <p>Alle vores tøj bliver kvalitet tjekket. </p>
+          <br></br>
+          <p className="bold">DKK &nbsp;{profile.Price}</p>
+          <div className="tilbtndetail">
+            <button>Tilføj i kurv</button>
+          </div>
         </div>
       </div>
     </>

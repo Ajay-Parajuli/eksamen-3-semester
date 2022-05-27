@@ -38,12 +38,6 @@ export const Login = () => {
             <p className="text-error">{errorMessage}</p>
             <button className="buttons">Sign in</button>
           </form>
-          <p className="text-center">
-            Har du ikke en profil?{" "}
-            <Link className="linket" to="/signup">
-              Opret en profil her
-            </Link>
-          </p>
         </div>
       </div>
     </div>

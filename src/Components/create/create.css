@@ -1,23 +1,53 @@
 .formdata {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.h2 {
   text-align: center;
 }
 
-.post-form {
-  margin: auto;
-  padding: 2em 0;
+.formdata h2 {
+  font-family: "Urbanist", sans-serif;
+  padding: 10px;
 }
 
 .image-preview {
-  max-width: 95%;
+  max-width: 100%;
+  border: 1px solid #333;
 }
 
-.post-form button {
+.felterimg {
+  text-align: center;
+}
+
+.felter p {
+  color: black;
+  padding-top: 2px;
+  margin-bottom: 5px;
+  padding-left: 1em;
+}
+
+.feltertext {
+  text-align: center;
+}
+
+.text-error {
+  color: red;
+  font-family: "Urbanist", sans-serif;
+}
+
+.tac {
+  text-align: center;
+}
+
+.tacbtn {
   padding: 12px 15px;
   font-size: 1em;
   width: 100%;
-  max-width: 350px;
+  max-width: 380px;
   font-weight: 300;
-  text-align: center;
   cursor: pointer;
   border: none;
   border-radius: 0;
@@ -25,17 +55,18 @@
   background-color: #333;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 0.5em 1em;
+  padding: 1em;
   font-size: 0.8em;
 }
 
-.post-form input {
-  margin: 1em auto;
+.post-form input,
+select {
+  margin: 0 auto;
   width: 100%;
-  max-width: 350px;
+  max-width: 380px;
   padding: 1em;
-  box-sizing: border-box;
   display: block;
   background: #f5f5f5;
-  border: 2px solid #568203;
+  border: 1px solid black;
+  border-radius: 3px;
 }

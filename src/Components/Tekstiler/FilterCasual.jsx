@@ -146,10 +146,9 @@ export const FilterCasual = () => {
               </div>
             </label>
           </div>
+          <p className="errormsg">{errormessage}</p>
           <button className="findvalgte">Find valgte</button>
         </div>
-
-        <p>{errormessage}</p>
       </form>
     </>
   );

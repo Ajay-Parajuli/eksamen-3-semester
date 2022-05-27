@@ -1,0 +1,143 @@
+body {
+  background-color: #fbfbfb;
+}
+
+/*-----------about-------------*/
+
+.bannerbox {
+  position: relative;
+  text-align: center;
+  background-color: #4f5267;
+  margin-top: 1px;
+  border: none;
+}
+
+.bannerbox img {
+  filter: brightness(80%);
+}
+
+.mission-vision-om {
+  background-color: #4f5267;
+  width: 100%;
+  height: auto;
+}
+
+.mv {
+  width: 100%;
+  height: auto;
+}
+
+.mildtimg {
+  text-align: center;
+  border: none;
+}
+
+.mv p {
+  color: #f5f5f5;
+  padding: 5px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.pdiv {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.mildtimg img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Urbanist", sans-serif;
+  color: #f5f5f5;
+}
+
+.om-mig-genbrugsshop {
+  width: 100%;
+  height: auto;
+}
+
+.om-mig-genbrugsshopinside {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  background-color: orange;
+  border-radius: 90px;
+  margin-top: 20px;
+}
+
+.kontakt {
+  width: 100%;
+  height: auto;
+  background-color: #4f5267;
+  border: none;
+  margin: 0 auto;
+  max-width: 300px;
+  margin-top: 20px;
+}
+
+.ommig {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.ommig p {
+  color: black;
+  line-height: 1.5;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.ommig h2 {
+  font-family: "Urbanist", sans-serif;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.kontakt h2 {
+  color: #f5f5f5;
+  font-family: "Urbanist", sans-serif;
+}
+
+/*---------------findos----------------*/
+
+.find-os {
+  width: 100%;
+  height: 95vh;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.indholdfind {
+  width: 100%;
+  height: 500px;
+  background-color: #4f5267;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 19px 38px rgba(0, 0, 0, 0.3), 0 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.indholdfind h2 {
+  color: #f5f5f5;
+  font-family: "Urbanist", sans-serif;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.indholdfind p {
+  color: #f5f5f5;
+  line-height: 1.6;
+  padding-left: 20px;
+}

@@ -1,9 +1,5 @@
 import React from "react";
 
 export const Cart = () => {
-  return (
-    <>
-      <div className="cartitems"></div>;
-    </>
-  );
+  return <div>Cart</div>;
 };

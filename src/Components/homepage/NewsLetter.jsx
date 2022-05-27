@@ -19,13 +19,11 @@ export const NewsLetter = () => {
         </div>
         <div className="newsletterregister">
           <form>
-            <input type="text" value="" placeholder="Navn" />
+            <input type="text" placeholder="Navn" />
 
-            <input type="email" value="" placeholder="Email" />
+            <input type="email" placeholder="Email" />
 
-            <button className="button" type="submit">
-              Tilmeld
-            </button>
+            <button className="button">Tilmeld</button>
           </form>
         </div>
       </div>

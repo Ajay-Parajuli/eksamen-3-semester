@@ -5,23 +5,23 @@ import { productsRef } from "../firebase-config";
 import { ListOfCasualClothes } from "../Components/Tekstiler/ListOfCasualClothes";
 
 export const FilteredCasual = ({ showLoader }) => {
-  const [cloth, setCloth] = useState({});
+    const [cloth, setCloth] = useState({});
 
-  useEffect(() => {
-    const q = query(productsRef, orderBy("createdAt", "desc")); // order by: lastest post first
-    const unsubscribe = onSnapshot(q, (data) => {
-      const postsData = data.docs.map((doc) => {
-        return { ...doc.data(), id: doc.id };
-      });
-      setCloth(postsData);
-      showLoader(false);
-    });
-    return () => unsubscribe();
-  }, [showLoader]);
+    useEffect(() => {
+        const q = query(productsRef, orderBy("createdAt", "desc")); // order by: lastest post first
+        const unsubscribe = onSnapshot(q, data => {
+            const postsData = data.docs.map(doc => {
+                return { ...doc.data(), id: doc.id };
+            });
+            setCloth(postsData);
+            // showLoader(false);
+        });
+        return () => unsubscribe();
+    }, [showLoader]);
 
-  return (
-    <div>
-      <ListOfCasualClothes />
-    </div>
-  );
+    return (
+        <div>
+            <ListOfCasualClothes />
+        </div>
+    );
 };

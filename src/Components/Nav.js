@@ -22,44 +22,35 @@ export const Nav = () => {
     <div className="navbox">
       <div className="rightside">
         <div className="links" id={showLinks ? "hidden" : ""}>
-          <span>
-            <Link onClick={() => setShowLinks(!showLinks)} to="/clothing" className="navlink">
-              Se hele Cataloget
-            </Link>
-          </span>
+          <Link onClick={() => setShowLinks(!showLinks)} to="/catalog" className="navlink">
+            <span>Se hele Cataloget</span>
+          </Link>
+          <Link onClick={() => setShowLinks(!showLinks)} to="/omos" className="navlink">
+            <span>Om os</span>
+          </Link>
 
-          <span>
-            <Link onClick={() => setShowLinks(!showLinks)} to="/omos" className="navlink">
-              Om os
-            </Link>
-          </span>
-          <span>
-            <Link onClick={() => setShowLinks(!showLinks)} to="/accesories" className="navlink">
-              Find os
-            </Link>
-          </span>
+          <Link onClick={() => setShowLinks(!showLinks)} to="/findos" className="navlink">
+            <span>Find os</span>
+          </Link>
 
-          <span>
-            <Link onClick={() => setShowLinks(!showLinks)} to="/about" className="navlink">
-              Blog
-            </Link>
-          </span>
+          <Link onClick={() => setShowLinks(!showLinks)} to="/about" className="navlink">
+            <span>Blog</span>
+          </Link>
 
-          <span>
-            <Link onClick={() => setShowLinks(!showLinks)} className="navlink" to="/create">
-              Create
+          {!auth.currentUser ? (
+            <Link onClick={() => setShowLinks(!showLinks)} className="navlink" to="/login">
+              <span>Login</span>
             </Link>
-          </span>
-
-          <span>
-            {!auth.currentUser ? (
-              <Link onClick={() => setShowLinks(!showLinks)} className="navlink" to="/login">
-                Login
+          ) : (
+            <>
+              <Link onClick={() => setShowLinks(!showLinks)} className="navlink" to="/create">
+                <span>Create</span>
               </Link>
-            ) : (
-              <button onClick={signOutUser}>Log out</button>
-            )}
-          </span>
+              <p className="buttoncol" onClick={signOutUser}>
+                <span>Log out</span>
+              </p>
+            </>
+          )}
         </div>
         <button onClick={() => setShowLinks(!showLinks)}>
           <GiHamburgerMenu className="burger" />

@@ -18,6 +18,7 @@ import { ListOfCasualClothes } from "./Components/Tekstiler/ListOfCasualClothes"
 
 import { UpdatePage } from "./pages/UpdatePage";
 import { FindOsPage } from "./pages/FindOsPage";
+import { AllTheClothesPage } from "./pages/AllTheClothesPage";
 
 function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -51,15 +52,15 @@ function App() {
         <Route path="/detailpage/:id" element={<DetailPage />}></Route>
         <Route path="/listofcasclothes" element={<FilteredCasual />} />
         <Route path="/findos" element={<FindOsPage />} />
+        <Route path="/catalog" element={<AllTheClothesPage />} />
         <Route path="/signup" element={<SignUpPage />} />
 
         <Route path="*" element={<Navigate to="/homepage" />}></Route>
 
         {isAuth && (
           <>
-            <Route path="/" element={<ListOfCasualClothes showLoader={setShowLoader} />} />
+            <Route path="/" element={<Homepage showLoader={setShowLoader} />} />
             <Route path="/create" element={<Create showLoader={setShowLoader} />} />
-            <Route path="/update" element={<UpdatePage showLoader={setShowLoader} />} />
           </>
         )}
       </Routes>

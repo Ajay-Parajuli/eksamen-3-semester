@@ -7,7 +7,7 @@
 }
 .wrapper {
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 /*....Navbar.....*/
@@ -55,6 +55,15 @@
 
 .links {
   display: none;
+  text-align: center;
+}
+
+.buttoncol {
+  margin-bottom: 10px;
+}
+
+.links span {
+  padding: 10px;
 }
 
 .rightside #hidden {
@@ -67,12 +76,6 @@
   display: flex;
   flex-direction: column;
   z-index: 1000;
-}
-
-.links span {
-  width: 100%;
-  padding: 10px;
-  text-align: center;
 }
 
 .rightside button {
@@ -90,6 +93,8 @@
   text-decoration: none;
   font-family: "Urbanist", sans-serif;
   color: #fff;
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
 
 /*-------Banner-------*/
@@ -131,14 +136,12 @@
     flex-direction: row;
   }
 
-  .links span {
-    padding: 0px;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-
   .navlink {
     font-size: 17px;
+  }
+
+  .buttoncol {
+    color: #f5f5f5;
   }
 
   .navbox h2 {

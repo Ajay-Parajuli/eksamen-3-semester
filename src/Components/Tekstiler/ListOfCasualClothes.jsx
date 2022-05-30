@@ -9,6 +9,7 @@ import "aos/dist/aos.css";
 
 export const ListOfCasualClothes = () => {
   const [casclothes, setCasClothes] = useState([]);
+  const [filterClothes, setFilterClothes] = useState([]);
   const [searchTerm, SetSearchTerm] = useState("");
 
   const Ny = "Ny";
@@ -59,21 +60,35 @@ export const ListOfCasualClothes = () => {
       const results = products.filter((item) => filters.includes(item.subcategory));
       console.log(results);
       setCasClothes(results);
+      setFilterClothes(results);
     }
     getCasClothes();
   }, []);
 
   const [category, setCategory] = useState("");
+  const [prices, setPrices] = useState("");
 
-  const getProductsInCategory = () => {
+  const filterByCat = (category) => {
     if (category === "") {
-      return casclothes;
-    } else return casclothes.filter((product) => product.stand === category);
+      setFilterClothes(casclothes);
+    } else setFilterClothes(casclothes.filter((product) => product.stand === category));
   };
 
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: 1000 });
   }, []);
+
+  const orderByPrice = (value) => {
+    let sort = [];
+    console.log(value);
+    if (value === "1") {
+      sort = casclothes.sort((product1, product2) => {
+        return product1.Price - product2.Price;
+      });
+      console.log(sort);
+    }
+    setFilterClothes(sort);
+  };
 
   return (
     <>
@@ -103,7 +118,7 @@ export const ListOfCasualClothes = () => {
           <div>
             <b className="sortstand">Sorter efter tøjstand:</b>
 
-            <select onChange={(e) => setCategory(e.target.value)} className="value">
+            <select onChange={(e) => filterByCat(e.target.value)} className="value">
               <option value="">Alle</option>
               <option value={Ny}>{Ny}</option>
               <option value={Gammel}>{Gammel}</option>
@@ -113,18 +128,17 @@ export const ListOfCasualClothes = () => {
           <div>
             <b className="sortpris">Sorter efter pris:</b>
 
-            <select className="value" name="" id="">
-              <option value="Default">Random</option>
-
-              <option value="Høj Til Lav">Høj til Lav</option>
-              <option value="Lav til Høj">Lav til Høj</option>
+            <select onChange={(e) => orderByPrice(e.target.value)} className="value">
+              <option value="">Vælg</option>
+              <option value="1">Lav til høj</option>
+              <option value="2">Høj til lav</option>
             </select>
           </div>
         </div>
       </div>
 
       <section className="grid-container">
-        {getProductsInCategory()
+        {filterClothes
           .filter((cloth) => {
             if (searchTerm === "") {
               return cloth;
@@ -136,7 +150,7 @@ export const ListOfCasualClothes = () => {
             <article key={cloth.id}>
               <div data-aos="fade-up" className="desktop">
                 <Link
-                  className="link"
+                  className="linkdetail"
                   to={{
                     pathname: `/detailpage/${cloth.id}`,
                   }}
@@ -144,20 +158,22 @@ export const ListOfCasualClothes = () => {
                   <div className="images">
                     <img className="mobile" src={cloth.img1} alt={cloth.category} />
                   </div>
+
+                  <div className="extrainfo">
+                    <div>
+                      <b className="gory">{cloth.subcategory}</b> <br></br>
+                      <span>Størrelse:&nbsp;{cloth.Size}</span>
+                      <br></br>
+                      <span className="brand">Brand:&nbsp;{cloth.brand}</span> <br></br>
+                      <span className="brand">Stand:&nbsp;{cloth.stand}</span> <br></br>
+                      <b>DKK:&nbsp;{cloth.Price}</b>
+                    </div>
+
+                    <div className="tilbtn">
+                      <button>Se mere</button>
+                    </div>
+                  </div>
                 </Link>
-                <div className="extrainfo">
-                  <div>
-                    <b className="gory">{cloth.subcategory}</b> <br></br>
-                    <span>Størrelse:&nbsp;{cloth.Size}</span>
-                    <br></br>
-                    <span className="brand">Brand:&nbsp;{cloth.brand}</span> <br></br>
-                    <span className="brand">Stand:&nbsp;{cloth.stand}</span> <br></br>
-                    <b>DKK:&nbsp;{cloth.Price}</b>
-                  </div>
-                  <div className="tilbtn">
-                    <button>Tilføj i kurv</button>
-                  </div>
-                </div>
               </div>
             </article>
           ))}

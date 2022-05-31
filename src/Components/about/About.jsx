@@ -11,15 +11,10 @@ export const About = () => {
   }, []);
   return (
     <div className="container">
-      <div className="bannerbox">
-        <img className="image" src={Banner} alt="banner" />
-        <div class="centered">
-          <h1>Om os</h1>
-        </div>
-      </div>
       <div className="mission-vision-om">
         <div className="mv">
           <div className="mildtimg">
+            <h1>Om os</h1>
             <img className="image" src={Tobias} alt="Tobias" />
           </div>
           <div>

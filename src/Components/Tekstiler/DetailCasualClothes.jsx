@@ -27,11 +27,13 @@ export const DetailCasualClothes = () => {
   }, []);
 
   function storeCart() {
-    const arrayCart = JSON.parse(localStorage.getItem("arrayCart") || "[]");
+    const arrayCart = JSON.parse(localStorage.getItem("cartitems") || "[]");
     let cart = profile;
     arrayCart.push(cart);
     localStorage.setItem("cartitems", JSON.stringify(arrayCart));
+    alert("Added to cart");
   }
+
 
   return (
     <>

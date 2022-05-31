@@ -97,16 +97,14 @@ export const ListOfCasualClothes = () => {
       >
         <p className="backr">- Tilbage</p>
       </Link>
-
-      {states.map((stat) => (
-        <article className="filtercats" key={stat.toString()}>
-          <div>
-            <div className="hell">
-              <p>{stat}</p>
-            </div>
-          </div>
-        </article>
-      ))}
+      <article className="filtercats">
+        {states.map((stat) => (
+          <p key={stat.toString()}>
+            {stat}
+            <span className="iconsdash">&nbsp;-&nbsp;</span>
+          </p>
+        ))}
+      </article>
       <div className="searchbox">
         <input
           type="text"

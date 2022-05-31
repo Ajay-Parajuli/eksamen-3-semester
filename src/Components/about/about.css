@@ -32,6 +32,11 @@ body {
   border: none;
 }
 
+.mildtimg h1 {
+  color: #f5f5f5;
+  font-family: "Urbanist", sans-serif;
+}
+
 .mv p {
   color: #f5f5f5;
   padding: 5px;

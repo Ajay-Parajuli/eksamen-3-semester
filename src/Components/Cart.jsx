@@ -50,8 +50,10 @@ export const Cart = () => {
           </article>
         ))}
 
-        <div>
-          <b>Total price: DKK: {getTotalSum()}</b>
+        <div className="totalprice">
+          <p>
+            Total pris: <span>{getTotalSum()} DKK</span>{" "}
+          </p>
         </div>
       </div>
     </>

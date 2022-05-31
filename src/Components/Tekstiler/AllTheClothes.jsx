@@ -3,6 +3,8 @@ import { productsRef } from "../../firebase-config";
 import { getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export const AllTheClothes = () => {
   const [allclothes, setAllClothes] = useState([]);
@@ -24,6 +26,10 @@ export const AllTheClothes = () => {
     getAllClothes();
   }, []);
 
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   return (
     <>
       <div className="heading">
@@ -32,7 +38,7 @@ export const AllTheClothes = () => {
       <div className="searchbox">
         <input
           type="text"
-          placeholder="Søg efter tøj og tilbehør"
+          placeholder="Søg efter tøj og tilbehør e.g shorts, sko, ur..."
           onChange={(event) => {
             SetSearchTerm(event.target.value);
           }}
@@ -50,7 +56,7 @@ export const AllTheClothes = () => {
           })
           .map((cloth) => (
             <article key={cloth.id}>
-              <div className="desktop">
+              <div data-aos="fade-up" className="desktop">
                 <Link
                   className="linkdetail"
                   to={{

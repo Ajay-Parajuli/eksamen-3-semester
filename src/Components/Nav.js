@@ -33,10 +33,6 @@ export const Nav = () => {
             <span>Find os</span>
           </Link>
 
-          <Link onClick={() => setShowLinks(!showLinks)} to="/about" className="navlink">
-            <span>Blog</span>
-          </Link>
-
           {!auth.currentUser ? (
             <Link onClick={() => setShowLinks(!showLinks)} className="navlink" to="/login">
               <span>Login</span>

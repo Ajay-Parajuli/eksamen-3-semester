@@ -130,13 +130,13 @@
 /*....Cart.....*/
 
 .h11 {
-  text-align: center;
   font-family: "Urbanist", sans-serif;
   padding: 10px;
 }
 
 .h11 h1 {
   margin-bottom: 10px;
+  text-align: center;
 }
 .cartitems {
   display: flex;
@@ -176,6 +176,15 @@ b {
 .iconcart {
   font-size: 19px;
   color: #333;
+}
+
+.totalprice p {
+  font-size: 18px;
+  color: black;
+}
+
+.totalprice span {
+  font-weight: bolder;
 }
 
 @media screen and (min-width: 900px) {

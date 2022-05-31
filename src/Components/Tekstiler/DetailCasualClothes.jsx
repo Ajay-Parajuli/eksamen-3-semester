@@ -26,10 +26,17 @@ export const DetailCasualClothes = () => {
     getCasClothes();
   }, []);
 
+  function storeCart() {
+    const arrayCart = JSON.parse(localStorage.getItem("arrayCart") || "[]");
+    let cart = profile;
+    arrayCart.push(cart);
+    localStorage.setItem("cartitems", JSON.stringify(arrayCart));
+  }
+
   return (
     <>
       <Link
-        className="linkss"
+        className="linksss"
         to={{
           pathname: `/listofcasclothes`,
         }}
@@ -57,7 +64,7 @@ export const DetailCasualClothes = () => {
           <br></br>
           <p className="bold">DKK &nbsp;{profile.Price}</p>
           <div className="tilbtndetail">
-            <button>Tilføj i kurv</button>
+            <button onClick={storeCart}>Tilføj i kurv</button>
           </div>
         </div>
       </div>

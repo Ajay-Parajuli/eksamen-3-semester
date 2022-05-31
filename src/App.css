@@ -94,6 +94,14 @@
   font-family: "Urbanist", sans-serif;
   color: #fff;
   margin-bottom: 10px;
+  width: 100%;
+  padding: 5px;
+}
+
+.navlinkcart {
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 10px;
   margin-top: 5px;
 }
 

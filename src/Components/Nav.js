@@ -46,7 +46,7 @@ export const Nav = () => {
               <Link onClick={() => setShowLinks(!showLinks)} className="navlink" to="/create">
                 <span>Create</span>
               </Link>
-              <p className="buttoncol" onClick={signOutUser}>
+              <p className="buttoncol navlink" onClick={signOutUser}>
                 <span>Log out</span>
               </p>
             </>
@@ -64,7 +64,7 @@ export const Nav = () => {
 
       <div className="middel">
         <span>
-          <Link to="/cart" className="navlink">
+          <Link to="/cart" className="navlinkcart">
             <AiOutlineShoppingCart className="icon" />
           </Link>
         </span>

@@ -14,9 +14,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import { SignUpPage } from "./pages/SignUpPage";
 import React, { useState } from "react";
-import { ListOfCasualClothes } from "./Components/Tekstiler/ListOfCasualClothes";
 
-import { UpdatePage } from "./pages/UpdatePage";
 import { FindOsPage } from "./pages/FindOsPage";
 import { AllTheClothesPage } from "./pages/AllTheClothesPage";
 

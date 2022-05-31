@@ -137,6 +137,21 @@ body {
   line-height: 1.2;
 }
 
+.filtercats {
+  display: inline-block;
+}
+
+.hell {
+  padding-left: 15px;
+}
+
+.filtercats p {
+  color: black;
+  opacity: 0.8;
+  line-height: 0.2;
+  margin-bottom: 20px;
+}
+
 .images {
   background-color: #f6f6f6;
   text-align: center;
@@ -262,6 +277,6 @@ body {
   padding: 5px;
 }
 
-.linkss {
+.linksss {
   text-decoration: none;
 }

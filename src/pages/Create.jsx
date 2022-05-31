@@ -21,7 +21,7 @@ export const Create = ({ showLoader }) => {
     await addDoc(productsRef, newPost);
 
     showLoader(false);
-    navigate("/");
+    navigate("/clothing");
   }
 
   return (

@@ -9,8 +9,10 @@ import "aos/dist/aos.css";
 
 export const ListOfCasualClothes = () => {
   const [casclothes, setCasClothes] = useState([]);
-  const [filterClothes, setFilterClothes] = useState([]);
   const [searchTerm, SetSearchTerm] = useState("");
+  const [prices, setPrices] = useState("");
+  const [category, setCategory] = useState("");
+  const [states, setStates] = useState([]);
 
   const Ny = "Ny";
   const Gammel = "Gammel";
@@ -43,6 +45,7 @@ export const ListOfCasualClothes = () => {
       if (localStorage.getItem("Sko")) {
         filters.push("Sko");
       }
+      setStates(filters);
       return filters;
     }
 
@@ -60,49 +63,50 @@ export const ListOfCasualClothes = () => {
       const results = products.filter((item) => filters.includes(item.subcategory));
       console.log(results);
       setCasClothes(results);
-      setFilterClothes(results);
     }
     getCasClothes();
   }, []);
-
-  const [category, setCategory] = useState("");
-  const [prices, setPrices] = useState("");
-
-  const filterByCat = (category) => {
-    if (category === "") {
-      setFilterClothes(casclothes);
-    } else setFilterClothes(casclothes.filter((product) => product.stand === category));
-  };
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
 
-  const orderByPrice = (value) => {
-    let sort = [];
-    console.log(value);
-    if (value === "1") {
-      sort = casclothes.sort((product1, product2) => {
+  function getCasClothes() {
+    let clothes = casclothes;
+    if (category) {
+      clothes = clothes.filter((product) => product.stand === category);
+    }
+    if (prices) {
+      clothes = clothes.sort((product1, product2) => {
         return product1.Price - product2.Price;
       });
-      console.log(sort);
+      if (prices === "2") {
+        clothes.reverse();
+      }
     }
-    setFilterClothes(sort);
-  };
+    return clothes;
+  }
 
   return (
     <>
       <Link
-        className="linkss"
+        className="linksss"
         to={{
           pathname: `/clothing`,
         }}
       >
         <p className="backr">- Tilbage</p>
       </Link>
-      <div className="heading">
-        <h2>Filtrere</h2>
-      </div>
+
+      {states.map((stat) => (
+        <article className="filtercats" key={stat.toString()}>
+          <div>
+            <div className="hell">
+              <p>{stat}</p>
+            </div>
+          </div>
+        </article>
+      ))}
       <div className="searchbox">
         <input
           type="text"
@@ -118,7 +122,7 @@ export const ListOfCasualClothes = () => {
           <div>
             <b className="sortstand">Sorter efter tøjstand:</b>
 
-            <select onChange={(e) => filterByCat(e.target.value)} className="value">
+            <select onChange={(e) => setCategory(e.target.value)} className="value">
               <option value="">Alle</option>
               <option value={Ny}>{Ny}</option>
               <option value={Gammel}>{Gammel}</option>
@@ -128,7 +132,7 @@ export const ListOfCasualClothes = () => {
           <div>
             <b className="sortpris">Sorter efter pris:</b>
 
-            <select onChange={(e) => orderByPrice(e.target.value)} className="value">
+            <select onChange={(e) => setPrices(e.target.value)} className="value">
               <option value="">Vælg</option>
               <option value="1">Lav til høj</option>
               <option value="2">Høj til lav</option>
@@ -138,7 +142,7 @@ export const ListOfCasualClothes = () => {
       </div>
 
       <section className="grid-container">
-        {filterClothes
+        {getCasClothes()
           .filter((cloth) => {
             if (searchTerm === "") {
               return cloth;
@@ -160,7 +164,7 @@ export const ListOfCasualClothes = () => {
                   </div>
 
                   <div className="extrainfo">
-                    <div>
+                    <div className="div">
                       <b className="gory">{cloth.subcategory}</b> <br></br>
                       <span>Størrelse:&nbsp;{cloth.Size}</span>
                       <br></br>

@@ -113,7 +113,6 @@ export const PostForm = ({ savePost, products }) => {
           <select value={stand} onChange={(e) => setStand(e.target.value)}>
             <option value="">Vælg</option>
             <option value="Ny">Ny</option>
-            <option value="Næsten Gammel">Næsten Ny</option>
             <option value="Gammel">Gammel</option>
           </select>
         </div>

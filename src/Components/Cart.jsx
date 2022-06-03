@@ -4,6 +4,8 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 export const Cart = () => {
   const [items, setItems] = useState([]);
 
+   /*  getting items from localstorage */ 
+
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("cartitems"));
     if (items) {
@@ -11,12 +13,15 @@ export const Cart = () => {
     }
   }, []);
 
+   /* removing cartitems on click*/ 
+
   const removeFromCart = (productToRemove) => {
     const filtered = items.filter((item) => item.id !== productToRemove);
     setItems(filtered);
     localStorage.setItem("cartitems", JSON.stringify(filtered));
   };
 
+   /* getting total prices of cartitem products*/ 
   const getTotalSum = () => {
     let sum = 0;
     for (const item of items) {

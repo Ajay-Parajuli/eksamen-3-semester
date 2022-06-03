@@ -10,6 +10,7 @@ export const Login = () => {
     event.preventDefault();
     const mail = event.target.mail.value;
     const password = event.target.password.value;
+    /* checks if email and password is valid*/
     const auth = getAuth();
     signInWithEmailAndPassword(auth, mail, password)
       .then((userCredential) => {

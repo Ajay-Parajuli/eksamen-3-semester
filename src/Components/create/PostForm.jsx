@@ -28,6 +28,8 @@ export const PostForm = ({ savePost, products }) => {
     }
   }, [products]);
 
+   /* Billede skal have en bestemt størrelse og til placeholder img*/ 
+
   function handleImageChange(event) {
     const file = event.target.files[0];
     if (file.size < 500000) {
@@ -41,6 +43,8 @@ export const PostForm = ({ savePost, products }) => {
       setErrorMessage("The image file is too big!");
     }
   }
+
+   /* sætter properties op som jeg gerne vil have values på*/ 
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -56,6 +60,7 @@ export const PostForm = ({ savePost, products }) => {
       subcategory: subcategory,
     };
 
+     /* Alle filter skal udfyldes før savepost bliver udført*/ 
     const validForm =
       formData.brand &&
       formData.img1 &&

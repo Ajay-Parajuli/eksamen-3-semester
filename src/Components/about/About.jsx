@@ -5,10 +5,16 @@ import Tobias from "../../assets/images/tobias.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
+
+
 export const About = () => {
+
+  /* Initialize animate on scroll effect*/ 
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
+
+
   return (
     <div className="container">
       <div className="mission-vision-om">

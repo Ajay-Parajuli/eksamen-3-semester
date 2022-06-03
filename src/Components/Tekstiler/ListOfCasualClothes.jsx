@@ -17,6 +17,9 @@ export const ListOfCasualClothes = () => {
   const Ny = "Ny";
   const Gammel = "Gammel";
 
+
+   /* geting values from localstorage correspond with firebase data*/ 
+
   useEffect(() => {
     function getFilters() {
       const filters = [];
@@ -48,7 +51,7 @@ export const ListOfCasualClothes = () => {
       setStates(filters);
       return filters;
     }
-
+ /* Getting data from firebase*/ 
     async function getCasClothes() {
       const data = await getDocs(productsRef);
 
@@ -70,6 +73,8 @@ export const ListOfCasualClothes = () => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
+
+   /* Filtering tøjstand and pris*/ 
 
   function getCasClothes() {
     let clothes = casclothes;

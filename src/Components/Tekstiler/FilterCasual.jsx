@@ -22,6 +22,7 @@ export const FilterCasual = () => {
   const [sko, setSko] = useState(localStorage.getItem("Sko"));
   const [errormessage, setErrormessage] = useState("");
 
+  /* Setting checked checkboxes to send to local storage*/
   function handleSubmit(event) {
     event.preventDefault();
     const checked = document.querySelectorAll("input[type=checkbox]:checked").length;

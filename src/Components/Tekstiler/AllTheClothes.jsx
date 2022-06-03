@@ -10,6 +10,8 @@ export const AllTheClothes = () => {
   const [allclothes, setAllClothes] = useState([]);
   const [searchTerm, SetSearchTerm] = useState("");
 
+
+   /* Getting data from firebase*/ 
   useEffect(() => {
     async function getAllClothes() {
       const data = await getDocs(productsRef);

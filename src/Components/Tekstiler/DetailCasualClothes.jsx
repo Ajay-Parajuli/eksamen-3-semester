@@ -6,6 +6,7 @@ import "./tekstiler.css";
 import { Link } from "react-router-dom";
 
 export const DetailCasualClothes = () => {
+   /* getting the clicked object and displaying in another throght id using useParams*/ 
   const params = useParams();
   console.log(params.id);
   const [profile, setProfile] = useState({});
@@ -26,6 +27,8 @@ export const DetailCasualClothes = () => {
     getCasClothes();
   }, []);
 
+
+   /* Sending items to localstorage for cartItems*/ 
   function storeCart() {
     const arrayCart = JSON.parse(localStorage.getItem("cartitems") || "[]");
     let cart = profile;

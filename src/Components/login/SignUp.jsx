@@ -11,6 +11,7 @@ export const SignUp = () => {
     event.preventDefault();
     const email = event.target.mail.value;
     const password = event.target.password.value;
+     /* Creates a user*/ 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
